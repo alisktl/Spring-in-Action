@@ -1,3 +1,5 @@
+# Getting started with Spring
+
 ## Install dependencies
 To install the dependencies use the command in terminal:
 ```
