@@ -1,3 +1,5 @@
+# Developing web applications
+
 ## Install dependencies
 To install the dependencies use the command in terminal:
 ```
