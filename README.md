@@ -6,3 +6,4 @@ Projects from the [Spring in Action, Sixth Edition](https://www.manning.com/book
 1. [Getting started with Spring](./chapter01)
 2. [Developing web applications](./chapter02)
 3. [Working with data](./chapter03)
+4. [Working with nonrelational data](./chapter04)
