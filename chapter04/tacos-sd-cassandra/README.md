@@ -25,3 +25,23 @@ create keyspace taco_cloud
    ... with replication={'class':'SimpleStrategy', 'replication_factor':1}
    ... and durable_writes=true;
 ```
+
+## Install dependencies
+To install the dependencies use the command in terminal:
+```
+mvn install
+```
+
+## Run Spring Project
+
+### Run
+To run the project use the command in terminal:
+```
+mvn spring-boot:run
+```
+
+### Test
+To run tests use the command in terminal:
+```
+mvn test
+```
