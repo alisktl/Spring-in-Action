@@ -40,6 +40,9 @@ public class HomeControllerTest {
     @MockBean
     private OrderProps orderProps;
 
+    @MockBean
+    private DiscountCodeProps discountProps;
+
     @Test
     public void testHomePage() throws Exception {
         mockMvc.perform(get("/"))
