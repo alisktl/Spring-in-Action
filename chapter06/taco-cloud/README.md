@@ -15,7 +15,8 @@ export SPRING_PROFILES_ACTIVE=prod
 ```
 spring:
   profiles:
-    active: dev # or prod
+    active: dev
+    #active: prod
 ```
 
 In the app I set active profile as an environment variable
