@@ -1,1 +1,1 @@
-# 6. Working with configuration properties
+# Working with configuration properties
