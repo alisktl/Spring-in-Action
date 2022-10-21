@@ -1,0 +1,42 @@
+greeting:
+  welcome: You are using ${spring.application.name}.
+
+spring:
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+
+taco:
+  orders:
+    pageSize: 10
+
+  discount:
+    codes:
+      discount_1: 10
+      discount_2: 15
+
+server:
+  port: 8765
+  ssl:
+    key-store: file:///Users/alisher/Documents/keystore/mykeys.jks
+    key-store-password: keystorepassword
+    key-password: keystorepassword
+
+    logging:
+  file:
+    name: /Users/alisher/Desktop/logs/taco.log
+    max-size: 1KB
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: DEBUG
+
+---
+spring:
+  profiles: prod
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tacocloud
+    username: tacouser
+    password: tacopassword
