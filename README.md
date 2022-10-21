@@ -8,3 +8,4 @@ Projects from the [Spring in Action, Sixth Edition](https://www.manning.com/book
 3. [Working with data](./chapter03)
 4. [Working with nonrelational data](./chapter04)
 5. [Securing Spring](./chapter05)
+6. [Working with configuration properties](./chapter06)
