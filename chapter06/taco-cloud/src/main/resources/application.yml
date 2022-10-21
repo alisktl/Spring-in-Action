@@ -24,8 +24,8 @@ server:
 
     logging:
   file:
-    name: /Users/alisher/Desktop/logs/taco.log
-    max-size: 1KB
+    name: /path/to/logs/taco.log
+    max-size: 10MB
   level:
     root: INFO
     org:
