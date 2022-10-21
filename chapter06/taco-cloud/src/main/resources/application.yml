@@ -18,7 +18,7 @@ taco:
 server:
   port: 8765
   ssl:
-    key-store: file:///Users/alisher/Documents/keystore/mykeys.jks
+    key-store: file:///path/to/ssl_certificate/mykeys.jks
     key-store-password: keystorepassword
     key-password: keystorepassword
 
