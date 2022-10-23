@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>sia</groupId>
+        <groupId>sia-local</groupId>
         <artifactId>taco-cloud-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -25,12 +25,12 @@
     <dependencies>
         <!-- TacoCloud dependencies -->
         <dependency>
-            <groupId>sia</groupId>
+            <groupId>sia-local</groupId>
             <artifactId>tacocloud-data</artifactId>
             <version>${tacocloud.version}</version>
         </dependency>
         <dependency>
-            <groupId>sia</groupId>
+            <groupId>sia-local</groupId>
             <artifactId>tacocloud-domain</artifactId>
             <version>${tacocloud.version}</version>
         </dependency>

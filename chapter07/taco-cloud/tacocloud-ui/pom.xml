@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>sia</groupId>
+    <groupId>sia-local</groupId>
     <artifactId>taco-cloud-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>

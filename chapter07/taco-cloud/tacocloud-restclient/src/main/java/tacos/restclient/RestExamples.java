@@ -110,7 +110,7 @@ public class RestExamples {
     @Bean
     public Traverson traverson() {
         Traverson traverson = new Traverson(
-            URI.create("http://localhost:8080/api"), MediaTypes.HAL_JSON);
+            URI.create("http://localhost:8080/data-api"), MediaTypes.HAL_JSON);
         return traverson;
     }
 
@@ -128,8 +128,13 @@ public class RestExamples {
     @Bean
     public CommandLineRunner traversonSaveIngredient(TacoCloudClient tacoCloudClient) {
         return args -> {
+            String newIngredientId = "PICO";
+
             Ingredient pico = tacoCloudClient.addIngredient(
-                new Ingredient("PICO", "Pico de Gallo", Ingredient.Type.SAUCE));
+                new Ingredient(newIngredientId, "Pico de Gallo", Ingredient.Type.SAUCE));
+
+            pico.setId(newIngredientId);
+
             List<Ingredient> allIngredients = tacoCloudClient.getAllIngredients();
             log.info("----------------------- ALL INGREDIENTS AFTER SAVING PICO -------------------------");
             for (Ingredient ingredient : allIngredients) {

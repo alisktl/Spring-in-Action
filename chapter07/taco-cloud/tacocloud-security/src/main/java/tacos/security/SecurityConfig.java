@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
             .antMatchers(HttpMethod.OPTIONS).permitAll() // needed for Angular/CORS
-            .antMatchers("/api/**")
+            .antMatchers("/api/**", "/data-api/**")
             .permitAll()
             //.access("hasRole('USER')")
             .antMatchers(HttpMethod.PATCH, "/api/ingredients").permitAll()
@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // Make H2-Console non-secured; for debug purposes
             .and()
             .csrf()
-            .ignoringAntMatchers("/h2-console/**", "/api/**")
+            .ignoringAntMatchers("/h2-console/**", "/api/**", "/data-api/**")
 
             // Allow pages to be loaded in frames from the same origin; needed for H2-Console
             .and()
