@@ -12,3 +12,4 @@ Projects from the [Spring in Action, Sixth Edition](https://www.manning.com/book
 
 ### 2. Part 2. Integrated Spring
 7. [Creating REST services](./chapter07)
+8. [Securing REST](./chapter08)
