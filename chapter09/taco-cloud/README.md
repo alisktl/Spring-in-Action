@@ -38,6 +38,15 @@ In [RabbitMQ Management](http://localhost:15672) create new queue `tacocloud.ord
 ### Binding the queue with the exchange
 In [RabbitMQ Management](http://localhost:15672) open newly created queue `tacocloud.order.queue_1` and bind it with the echange `tacocloud.order` with routing-key `tacocloud.order.queue`.
 
+## Setup Apache Kafka
+### Install Apache Kafka
+You can install the Apacha Kafka using this [quickstart](https://kafka.apache.org/quickstart)
+
+### Run topic `tacocloud.orders.topic` listener
+```
+bin/kafka-console-consumer.sh --topic tacocloud.orders.topic --from-beginning --bootstrap-server localhost:9092
+```
+
 ## Run Spring Project
 
 ### Install dependencies
