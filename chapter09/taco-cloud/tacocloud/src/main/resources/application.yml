@@ -43,6 +43,15 @@ spring:
       exchange: tacocloud.order
       routing-key: tacocloud.order.queue
 
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    template:
+      default-topic: tacocloud.orders.topic
+    producer:
+      keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 ---
 spring:
   profiles: prod
@@ -66,6 +75,15 @@ spring:
     template:
       exchange: tacocloud.order
       routing-key: tacocloud.order.queue
+
+  kafka:
+    bootstrap-servers:
+      - localhost:9093
+    template:
+      default-topic: tacocloud.orders.topic
+    producer:
+      keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 logging:
   level:

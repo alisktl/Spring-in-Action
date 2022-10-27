@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import tacos.TacoOrder;
 import tacos.data.OrderRepository;
-import tacos.messaging.rabbitmq.OrderMessagingService;
+import tacos.messaging.kafka.OrderMessagingService;
 
 @RestController
 @RequestMapping(path = "/api/orders", produces = "application/json")

@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tacocloud-messaging-rabbitmq</artifactId>
-    <name>tacocloud-messaging-rabbitmq</name>
-    <description>Taco Cloud Messaging (RabbitMQ)</description>
+    <artifactId>tacocloud-messaging-kafka</artifactId>
+    <name>tacocloud-messaging-kafka</name>
+    <description>Taco Cloud Messaging (Kafka)</description>
     <packaging>jar</packaging>
 
     <properties>
@@ -28,12 +28,12 @@
         </dependency>
 
         <!-- Necessary Boot starters -->
-        <!-- tag::amqpStarter[] -->
+        <!-- tag::kafkaStarter[] -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
-        <!-- end::amqpStarter[] -->
+        <!-- end::kafkaStarter[] -->
 
         <!-- Lombok -->
         <dependency>

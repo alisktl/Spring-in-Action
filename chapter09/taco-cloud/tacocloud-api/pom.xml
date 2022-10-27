@@ -46,9 +46,15 @@
             <version>${tacocloud.version}</version>
         </dependency> -->
 
-        <dependency>
+        <!-- <dependency>
             <groupId>sia-local</groupId>
             <artifactId>tacocloud-messaging-rabbitmq</artifactId>
+            <version>${tacocloud.version}</version>
+        </dependency> -->
+
+        <dependency>
+            <groupId>sia-local</groupId>
+            <artifactId>tacocloud-messaging-kafka</artifactId>
             <version>${tacocloud.version}</version>
         </dependency>
 
