@@ -1,26 +1,3 @@
-## Run Spring Project
-
-### Install dependencies
-To install the dependencies use the command in terminal:
-```
-mvn install
-```
-
-### Run
-To run the project use the command in terminal:
-```
-cd tacocloud
-```
-```
-mvn spring-boot:run
-```
-
-### Test
-To run tests use the command in terminal:
-```
-mvn test
-```
-
 ## Setup ActiveMQ Artemis
 
 ### Create a new broker `broker-sia`
@@ -60,3 +37,26 @@ In [RabbitMQ Management](http://localhost:15672) create new queue `tacocloud.ord
 
 ### Binding the queue with the exchange
 In [RabbitMQ Management](http://localhost:15672) open newly created queue `tacocloud.order.queue_1` and bind it with the echange `tacocloud.order` with routing-key `tacocloud.order.queue`.
+
+## Run Spring Project
+
+### Install dependencies
+To install the dependencies use the command in terminal:
+```
+mvn install
+```
+
+### Run
+To run the project use the command in terminal:
+```
+cd tacocloud
+```
+```
+mvn spring-boot:run
+```
+
+### Test
+To run tests use the command in terminal:
+```
+mvn test
+```
