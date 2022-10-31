@@ -1,3 +1,8 @@
+security:
+  user:
+    name: buzz
+    password: infinity
+
 taco:
   orders:
     pageSize: 10
@@ -11,9 +16,22 @@ logging:
     org.springframework.data.rest: debug
 
 spring:
-#  data:
-#    rest:
-#      base-path: /data-api
+  application:
+    name: taco-cloud
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+        username: admin
+        password: 53cr3t
+        instance:
+          serviceBaseUrl: http://localhost:8080
+
+  data:
+    rest:
+      base-path: /data-api
+
   datasource:
     generate-unique-name: false
     name: tacocloud
@@ -51,6 +69,27 @@ spring:
     producer:
       keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
       valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: threaddump, heapdump
+  endpoint:
+    health:
+      show-details: always
+  info:
+    git:
+      mode: full
+    env:
+      # enable adding info from application.yml to Actuator
+      enabled: true
+
+info:
+  contact:
+    email: support@tacocloud.com
+    phone: +7-777-777-7777
 
 ---
 spring:

@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SuppressWarnings("deprecation")
@@ -23,11 +22,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    /*
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                .requestMatcher(EndpointRequest.toAnyEndpoint())
+                .authorizeRequests()
+                .anyRequest()
+                .hasRole("ADMIN")
+                .and()
+                .httpBasic();
+        }
+    */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
             .antMatchers(HttpMethod.OPTIONS).permitAll() // needed for Angular/CORS
+
+            .antMatchers("/actuator/**")
+            //.hasRole("ADMIN")
+            .permitAll()
 
             .antMatchers(HttpMethod.POST, "/api/ingredients")
             .hasAuthority("SCOPE_writeIngredients")
