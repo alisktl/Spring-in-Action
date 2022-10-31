@@ -1,0 +1,120 @@
+security:
+  user:
+    name: buzz
+    password: infinity
+
+taco:
+  orders:
+    pageSize: 10
+
+  discount:
+    codes:
+      abcdef: 10
+
+logging:
+  level:
+    org.springframework.data.rest: debug
+
+spring:
+  application:
+    name: taco-cloud
+
+  data:
+    rest:
+      base-path: /data-api
+
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks
+
+  jms:
+    template:
+      default-destination: tacocloud.order.queue
+
+  artemis:
+    host: localhost
+    port: 61616
+    user: tacoweb
+    password: letm31n
+    embedded:
+      enabled: false
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    template:
+      exchange: tacocloud.order
+      routing-key: tacocloud.order.queue
+
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    template:
+      default-topic: tacocloud.orders.topic
+    producer:
+      keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: threaddump, heapdump
+  endpoint:
+    health:
+      show-details: always
+  info:
+    git:
+      mode: full
+    env:
+      # enable adding info from application.yml to Actuator
+      enabled: true
+
+info:
+  contact:
+    email: support@tacocloud.com
+    phone: +7-777-777-7777
+
+---
+spring:
+  profiles: prod
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/tacocloud
+    username: tacouser
+    password: tacopassword
+
+  artemis:
+    host: localhost
+    port: 61617
+    user: tacoweb
+    password: l3tm31n
+    embedded:
+      enabled: false
+
+  rabbitmq:
+    host: rabbitmq.tacocloud.com
+    port: 5673
+    template:
+      exchange: tacocloud.order
+      routing-key: tacocloud.order.queue
+
+  kafka:
+    bootstrap-servers:
+      - localhost:9093
+    template:
+      default-topic: tacocloud.orders.topic
+    producer:
+      keySerializer: org.springframework.kafka.support.serializer.JsonSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+logging:
+  level:
+    tacos: WARN
