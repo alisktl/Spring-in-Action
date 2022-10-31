@@ -17,5 +17,5 @@ Projects from the [Spring in Action, Sixth Edition](https://www.manning.com/book
 10. [Integrating Spring](./chapter10)
 
 ### 4. Part 4. Deployed Spring
-15. [Working with Spring Boot Actuator](./chapter15_16)
-16. [Administering Spring](./chapter15_16)
+15. [Working with Spring Boot Actuator](./chapter15)
+16. [Administering Spring](./chapter16)
